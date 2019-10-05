@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -18,8 +18,9 @@ ngOnInit(){
   this.signupForm = new FormGroup({
     //in this js object we have to add controlls(ehich are key value pairs of formGroup) 
     //FormControl another class takes 3 args imported from @angular/forms. The 3 args are initial state, single validator or array of validators, async validators
-    'username': new FormControl(null),
-    'email':new FormControl(null),
+    //adding validation, Validators imported from @angular forms dont callany methods of that object as angular will call them 
+    'username': new FormControl(null,Validators.required),
+    'email':new FormControl(null,[Validators.required,Validators.email]),
     'gender':new FormControl('male')
   })
   }
