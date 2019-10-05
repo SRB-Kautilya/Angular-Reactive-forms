@@ -2,7 +2,8 @@
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
       <!--To know angular we are creating form programatically we have to define formgroup directive-->
-      <form [formGroup]="signupForm">
+      <!--For submitting a form we still use ngsubmit event-->
+      <form [formGroup]="signupForm" (ngSubmit)= "onSubmit()">
         <div class="form-group">
           <label for="username">Username</label>
           <!--After formGroup directive we have to tell angular which controlls connected to which input in template form-->

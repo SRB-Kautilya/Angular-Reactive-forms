@@ -23,5 +23,9 @@ ngOnInit(){
     'gender':new FormControl('male')
   })
   }
+// onsubmit takes formgroup class methods
+  onSubmit(){
+    console.log(this.signupForm)
+  }
 }
 
