@@ -19,8 +19,11 @@ ngOnInit(){
     //in this js object we have to add controlls(ehich are key value pairs of formGroup) 
     //FormControl another class takes 3 args imported from @angular/forms. The 3 args are initial state, single validator or array of validators, async validators
     //adding validation, Validators imported from @angular forms dont callany methods of that object as angular will call them 
-    'username': new FormControl(null,Validators.required),
-    'email':new FormControl(null,[Validators.required,Validators.email]),
+    //we can have nested formGroups too 
+   'userData': new FormGroup({
+     'username': new FormControl(null,Validators.required),
+     'email':new FormControl(null,[Validators.required,Validators.email]),
+   }),
     'gender':new FormControl('male')
   })
   }
